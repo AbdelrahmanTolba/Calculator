@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Calculator</title>
+</head>
+<body>
+    <div class="all">
+
+        <div action="" class="container">
+            <input type="text" id="num1">
+            <hr>
+            <table>
+                <tr>
+                    <th>
+                        <button onclick="sum()">+</button>
+                        
+                    </th>
+                    <th>
+                        <button onclick="subtract()">-</button>
+                        
+                    </th>
+                    <th>
+                        <button onclick="devision()">/</button>
+                        
+                    </th>
+                    <th>
+                        <button onclick="clr()">C</button>
+                    </th>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <button onclick="writeNum('1')">1</button>
+                        
+                    </td>
+                    <td>
+                        <button onclick="writeNum('2')">2</button>
+                        
+                    </td>
+                    <td>
+                        <button onclick="writeNum('3')">3</button>
+                    </td>
+                    <th>
+                        <button onclick="mod()">%</button>
+                    </th>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <button onclick="writeNum('4')">4</button>
+                        
+                    </td>
+                    <td>
+                        <button onclick="writeNum('5')">5</button>
+                    </td>
+                    <td>
+                        <button onclick="writeNum('6')">6</button>
+                        
+                    </td>
+                    <th>
+                        <button onclick="mul()">*</button>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <button onclick="writeNum('7')">7</button>
+                        
+                    </td>
+                    <td>
+                        <button onclick="writeNum('8')">8</button>
+                        
+                    </td>
+                    <td>
+                        <button onclick="writeNum('9')">9</button>
+                    </td>
+                    <th>
+                        <button onclick="showResult()">=</button> 
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                        <button onclick="writeNum('0')">0</button>
+                    </td>
+                </tr>
+            </table>
+            
+            
+            
+        </div>
+</div>
+
+    <script>
+        let result=0;
+        let n=document.getElementById("num1");
+       console.log(n);
+        
+        let op = "";
+        let num1Value = 0;
+        function writeNum(num){
+            n.value = n.value + num;
+        }
+        function sum(){
+            op = "+";
+            num1Value = Number(n.value);
+            n.value="";
+        }
+        function subtract(){
+            op = "-";
+            num1Value = Number(n.value);
+            n.value="";
+        }
+        function mod(){
+            op = "%";   
+            num1Value = Number(n.value);
+            n.value="";
+        }
+        function clr(){
+         
+             n.value="";
+        }
+        function mul(){
+            op = "*";
+            num1Value = Number(n.value);
+            n.value="";
+        }
+        function devision (){
+            op = "/";
+            num1Value = Number(n.value);
+            n.value="";
+        }
+        function showResult(){
+            switch(op){
+                case "+":
+                     result = num1Value + Number(n.value);
+                    n.value = result;
+                break;
+                case "-":
+                     result = num1Value - Number(n.value);
+                    n.value = result;
+                break;
+                case "*":
+                     result = num1Value * Number(n.value);
+                    n.value = result;
+                break;
+                case "/":
+                     result = (num1Value) / Number(n.value);
+                     n.value = result;
+                break;
+                case "%":
+                     result = num1Value % Number(n.value);
+                     n.value = result;
+                break;
+         
+            }
+        }
+        </script>
+</body>
+</html>
